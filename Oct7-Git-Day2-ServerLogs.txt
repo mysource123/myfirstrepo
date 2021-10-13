@@ -1,0 +1,634 @@
+Using username "ec2-user".
+Authenticating with public key "imported-openssh-key" from agent
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+3 package(s) needed for security, out of 15 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-82-148 ~]$ sudo su -
+[root@ip-172-31-82-148 ~]# hostnamectl set-hostname gitserver
+[root@ip-172-31-82-148 ~]# bash
+[root@gitserver ~]# git
+bash: git: command not found
+[root@gitserver ~]# yum install git -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                         | 3.7 kB  00:00:00
+Resolving Dependencies
+--> Running transaction check
+---> Package git.x86_64 0:2.32.0-1.amzn2.0.1 will be installed
+--> Processing Dependency: perl-Git = 2.32.0-1.amzn2.0.1 for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Processing Dependency: git-core-doc = 2.32.0-1.amzn2.0.1 for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Processing Dependency: git-core = 2.32.0-1.amzn2.0.1 for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Processing Dependency: emacs-filesystem >= 27.1 for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Processing Dependency: perl(Git::I18N) for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Processing Dependency: perl(Git) for package: git-2.32.0-1.amzn2.0.1.x86_64
+--> Running transaction check
+---> Package emacs-filesystem.noarch 1:27.2-4.amzn2.0.1 will be installed
+---> Package git-core.x86_64 0:2.32.0-1.amzn2.0.1 will be installed
+---> Package git-core-doc.noarch 0:2.32.0-1.amzn2.0.1 will be installed
+---> Package perl-Git.noarch 0:2.32.0-1.amzn2.0.1 will be installed
+--> Processing Dependency: perl(Error) for package: perl-Git-2.32.0-1.amzn2.0.1.noarch
+---> Package perl-TermReadKey.x86_64 0:2.30-20.amzn2.0.2 will be installed
+--> Running transaction check
+---> Package perl-Error.noarch 1:0.17020-2.amzn2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+==========================================================================================================================
+ Package                         Arch                  Version                            Repository                 Size
+==========================================================================================================================
+Installing:
+ git                             x86_64                2.32.0-1.amzn2.0.1                 amzn2-core                126 k
+Installing for dependencies:
+ emacs-filesystem                noarch                1:27.2-4.amzn2.0.1                 amzn2-core                 67 k
+ git-core                        x86_64                2.32.0-1.amzn2.0.1                 amzn2-core                4.8 M
+ git-core-doc                    noarch                2.32.0-1.amzn2.0.1                 amzn2-core                2.7 M
+ perl-Error                      noarch                1:0.17020-2.amzn2                  amzn2-core                 32 k
+ perl-Git                        noarch                2.32.0-1.amzn2.0.1                 amzn2-core                 43 k
+ perl-TermReadKey                x86_64                2.30-20.amzn2.0.2                  amzn2-core                 31 k
+
+Transaction Summary
+==========================================================================================================================
+Install  1 Package (+6 Dependent packages)
+
+Total download size: 7.8 M
+Installed size: 38 M
+Downloading packages:
+(1/7): emacs-filesystem-27.2-4.amzn2.0.1.noarch.rpm                                                |  67 kB  00:00:00
+(2/7): git-2.32.0-1.amzn2.0.1.x86_64.rpm                                                           | 126 kB  00:00:00
+(3/7): git-core-2.32.0-1.amzn2.0.1.x86_64.rpm                                                      | 4.8 MB  00:00:00
+(4/7): git-core-doc-2.32.0-1.amzn2.0.1.noarch.rpm                                                  | 2.7 MB  00:00:00
+(5/7): perl-Error-0.17020-2.amzn2.noarch.rpm                                                       |  32 kB  00:00:00
+(6/7): perl-Git-2.32.0-1.amzn2.0.1.noarch.rpm                                                      |  43 kB  00:00:00
+(7/7): perl-TermReadKey-2.30-20.amzn2.0.2.x86_64.rpm                                               |  31 kB  00:00:00
+--------------------------------------------------------------------------------------------------------------------------
+Total                                                                                      21 MB/s | 7.8 MB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : git-core-2.32.0-1.amzn2.0.1.x86_64                                                                     1/7
+  Installing : git-core-doc-2.32.0-1.amzn2.0.1.noarch                                                                 2/7
+  Installing : 1:perl-Error-0.17020-2.amzn2.noarch                                                                    3/7
+  Installing : 1:emacs-filesystem-27.2-4.amzn2.0.1.noarch                                                             4/7
+  Installing : perl-TermReadKey-2.30-20.amzn2.0.2.x86_64                                                              5/7
+  Installing : perl-Git-2.32.0-1.amzn2.0.1.noarch                                                                     6/7
+  Installing : git-2.32.0-1.amzn2.0.1.x86_64                                                                          7/7
+  Verifying  : perl-TermReadKey-2.30-20.amzn2.0.2.x86_64                                                              1/7
+  Verifying  : git-core-doc-2.32.0-1.amzn2.0.1.noarch                                                                 2/7
+  Verifying  : perl-Git-2.32.0-1.amzn2.0.1.noarch                                                                     3/7
+  Verifying  : 1:emacs-filesystem-27.2-4.amzn2.0.1.noarch                                                             4/7
+  Verifying  : git-2.32.0-1.amzn2.0.1.x86_64                                                                          5/7
+  Verifying  : git-core-2.32.0-1.amzn2.0.1.x86_64                                                                     6/7
+  Verifying  : 1:perl-Error-0.17020-2.amzn2.noarch                                                                    7/7
+
+Installed:
+  git.x86_64 0:2.32.0-1.amzn2.0.1
+
+Dependency Installed:
+  emacs-filesystem.noarch 1:27.2-4.amzn2.0.1                  git-core.x86_64 0:2.32.0-1.amzn2.0.1
+  git-core-doc.noarch 0:2.32.0-1.amzn2.0.1                    perl-Error.noarch 1:0.17020-2.amzn2
+  perl-Git.noarch 0:2.32.0-1.amzn2.0.1                        perl-TermReadKey.x86_64 0:2.30-20.amzn2.0.2
+
+Complete!
+[root@gitserver ~]# #yum install git -y
+[root@gitserver ~]#
+[root@gitserver ~]# git clone https://github.com/shan5a6/dvsbatch3.git
+Cloning into 'dvsbatch3'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+[root@gitserver ~]# ls -l  dvsbatch3/
+total 4
+-rw-r--r-- 1 root root 11 Oct  7 01:41 README.md
+[root@gitserver ~]# cd dvsbatch3/
+[root@gitserver dvsbatch3]# ls -al
+total 4
+drwxr-xr-x 3 root root  35 Oct  7 01:41 .
+dr-xr-x--- 4 root root 120 Oct  7 01:41 ..
+drwxr-xr-x 8 root root 163 Oct  7 01:41 .git
+-rw-r--r-- 1 root root  11 Oct  7 01:41 README.md
+[root@gitserver dvsbatch3]# touch test1 test2
+[root@gitserver dvsbatch3]# ls -l
+total 4
+-rw-r--r-- 1 root root 11 Oct  7 01:41 README.md
+-rw-r--r-- 1 root root  0 Oct  7 01:42 test1
+-rw-r--r-- 1 root root  0 Oct  7 01:42 test2
+[root@gitserver dvsbatch3]# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test1
+        test2
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@gitserver dvsbatch3]# git add test1 test2
+[root@gitserver dvsbatch3]# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test1
+        new file:   test2
+
+[root@gitserver dvsbatch3]# git commit -m "My git first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@gitserver.(none)')
+[root@gitserver dvsbatch3]# git config --global user.email "shahan.aix@gmail.com"
+[root@gitserver dvsbatch3]# git config --global user.name "shan5a6"
+[root@gitserver dvsbatch3]# git commit -m "My git first commit"
+[master b956f57] My git first commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1
+ create mode 100644 test2
+[root@gitserver dvsbatch3]# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[root@gitserver dvsbatch3]# ls -al
+total 4
+drwxr-xr-x 3 root root  61 Oct  7 01:42 .
+dr-xr-x--- 4 root root 138 Oct  7 01:44 ..
+drwxr-xr-x 8 root root 185 Oct  7 01:45 .git
+-rw-r--r-- 1 root root  11 Oct  7 01:41 README.md
+-rw-r--r-- 1 root root   0 Oct  7 01:42 test1
+-rw-r--r-- 1 root root   0 Oct  7 01:42 test2
+[root@gitserver dvsbatch3]# git log
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca (HEAD -> master)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c (origin/master, origin/HEAD)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]# git push origin master
+Username for 'https://github.com': shan5a6
+Password for 'https://shan5a6@github.com':
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# ls -al
+total 4
+drwxr-xr-x 3 root root  61 Oct  7 01:42 .
+dr-xr-x--- 4 root root 138 Oct  7 01:44 ..
+drwxr-xr-x 8 root root 185 Oct  7 01:45 .git
+-rw-r--r-- 1 root root  11 Oct  7 01:41 README.md
+-rw-r--r-- 1 root root   0 Oct  7 01:42 test1
+-rw-r--r-- 1 root root   0 Oct  7 01:42 test2
+[root@gitserver dvsbatch3]# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[root@gitserver dvsbatch3]# git push origin master
+Username for 'https://github.com': shan5a6
+Password for 'https://shan5a6@github.com':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 282 bytes | 282.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/shan5a6/dvsbatch3.git
+   976f8ad..b956f57  master -> master
+[root@gitserver dvsbatch3]# git statsu
+git: 'statsu' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# git log
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca (HEAD -> master, origin/master, origin/HEAD)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# cd ..
+[root@gitserver ~]# rm -rf dvsbatch3
+[root@gitserver ~]#
+[root@gitserver ~]#
+[root@gitserver ~]#
+[root@gitserver ~]# cd /tmp/
+[root@gitserver tmp]# git clone https://github.com/shan5a6/dvsbatch3.git
+Cloning into 'dvsbatch3'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+[root@gitserver tmp]# cd dvsbatch3/
+[root@gitserver dvsbatch3]# ls -l
+total 4
+-rw-r--r-- 1 root root 11 Oct  7 02:32 README.md
+-rw-r--r-- 1 root root  0 Oct  7 02:32 test1
+-rw-r--r-- 1 root root  0 Oct  7 02:32 test2
+[root@gitserver dvsbatch3]# git branch
+* master
+[root@gitserver dvsbatch3]# git checkout -b raj1
+Switched to a new branch 'raj1'
+[root@gitserver dvsbatch3]# git branch
+  master
+* raj1
+[root@gitserver dvsbatch3]# ls -l
+total 4
+-rw-r--r-- 1 root root 11 Oct  7 02:32 README.md
+-rw-r--r-- 1 root root  0 Oct  7 02:32 test1
+-rw-r--r-- 1 root root  0 Oct  7 02:32 test2
+[root@gitserver dvsbatch3]# touch f1 f2
+[root@gitserver dvsbatch3]# vi f1
+[root@gitserver dvsbatch3]# vi 2
+[root@gitserver dvsbatch3]# vi f2
+[root@gitserver dvsbatch3]# git status
+On branch raj1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        f1
+        f2
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@gitserver dvsbatch3]# #git add f1 f2
+[root@gitserver dvsbatch3]# git add *
+[root@gitserver dvsbatch3]# git status
+On branch raj1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   f1
+        new file:   f2
+
+[root@gitserver dvsbatch3]# git commit -m "testing branch stratagie"
+[raj1 8288c9a] testing branch stratagie
+ 2 files changed, 2 insertions(+)
+ create mode 100644 f1
+ create mode 100644 f2
+[root@gitserver dvsbatch3]# git log
+commit 8288c9a0e8bd587c0cd6aa53f3df926db5d3ace9 (HEAD -> raj1)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 02:35:30 2021 +0000
+
+    testing branch stratagie
+
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca (origin/master, origin/HEAD, master)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]# git branch
+  master
+* raj1
+[root@gitserver dvsbatch3]# git status
+On branch raj1
+nothing to commit, working tree clean
+[root@gitserver dvsbatch3]# git push origin raj1
+Username for 'https://github.com': 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
+Password for 'https://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@github.com':
+[root@gitserver dvsbatch3]# git push origin raj1
+Username for 'https://github.com': shan5a6
+Password for 'https://shan5a6@github.com':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 388 bytes | 388.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'raj1' on GitHub by visiting:
+remote:      https://github.com/shan5a6/dvsbatch3/pull/new/raj1
+remote:
+To https://github.com/shan5a6/dvsbatch3.git
+ * [new branch]      raj1 -> raj1
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# git branch
+  master
+* raj1
+[root@gitserver dvsbatch3]# ls
+f1  f2  README.md  test1  test2
+[root@gitserver dvsbatch3]# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+[root@gitserver dvsbatch3]# ls
+README.md  test1  test2
+[root@gitserver dvsbatch3]# git branch
+* master
+  raj1
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# git branch
+* master
+  raj1
+[root@gitserver dvsbatch3]# git branch jay1
+[root@gitserver dvsbatch3]# git branch
+  jay1
+* master
+  raj1
+[root@gitserver dvsbatch3]# git checkout jay1
+Switched to branch 'jay1'
+[root@gitserver dvsbatch3]# git branch
+* jay1
+  master
+  raj1
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# git branch
+* jay1
+  master
+  raj1
+[root@gitserver dvsbatch3]# ls -l
+total 4
+-rw-r--r-- 1 root root 11 Oct  7 02:32 README.md
+-rw-r--r-- 1 root root  0 Oct  7 02:32 test1
+-rw-r--r-- 1 root root  0 Oct  7 02:32 test2
+[root@gitserver dvsbatch3]# touch d1 d2
+[root@gitserver dvsbatch3]# git status
+On branch jay1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        d1
+        d2
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@gitserver dvsbatch3]# git add .
+[root@gitserver dvsbatch3]# git commit -m "testing tagging"
+[jay1 8764e2d] testing tagging
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 d1
+ create mode 100644 d2
+[root@gitserver dvsbatch3]# git tag releasev1.0
+[root@gitserver dvsbatch3]# git log
+commit 8764e2d4e70c3ddb49a8799adf46cd3a68e16c25 (HEAD -> jay1, tag: releasev1.0)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 03:04:46 2021 +0000
+
+    testing tagging
+
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca (origin/master, origin/HEAD, master)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:ARfCr8lW00ys7HEDBrK94GIgD6vtCrFZctvNvOQBC34 root@gitserver
+The key's randomart image is:
++---[RSA 2048]----+
+|    ..+.oo       |
+|     +.+o o      |
+|+   o .+.*       |
+|.= . . .B.=      |
+|+ B o..=S+ .     |
+|.@ = *= .        |
+|= + E.*          |
+|.. . o o         |
+|...   o          |
++----[SHA256]-----+
+[root@gitserver dvsbatch3]# ls -l ~/.ssh/id_rsa*
+-rw------- 1 root root 1679 Oct  7 03:18 /root/.ssh/id_rsa
+-rw-r--r-- 1 root root  396 Oct  7 03:18 /root/.ssh/id_rsa.pub
+[root@gitserver dvsbatch3]# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsWH+LWu4OegIkKeb/w27T7R1aFcLjmYZR7VuEwAFm7Ql/yWvagI4xQDVbjlA5ls8c76S6mBBTl1oH8rOI+dTuEOAgKTUy3dLlTURp5xVHiiUHI9Efkz3qRSij2pM38citIbprbNz8Ue4lGOCq/Ohu6gZxgq+lUp+kliOG4/LZng/pGrgfBPsIEfnu6faQNVYb2W9wtkBSl3mPyYvJ3gMVDq9g6qAGTKHKXCXGwaeVO2GnDasWBpVMGZr0t/3joW5jgL/yKmkrysI0sc8usjWosOpSr1tfsmnh3JTccDxM5g2sBbpXfgxert7g9e/acvGYKy8X/i+A/1H2LE00QZVv root@gitserver
+[root@gitserver dvsbatch3]# cat /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsWH+LWu4OegIkKeb/w27T7R1aFcLjmYZR7VuEwAFm7Ql/yWvagI4xQDVbjlA5ls8c76S6mBBTl1oH8rOI+dTuEOAgKTUy3dLlTURp5xVHiiUHI9Efkz3qRSij2pM38citIbprbNz8Ue4lGOCq/Ohu6gZxgq+lUp+kliOG4/LZng/pGrgfBPsIEfnu6faQNVYb2W9wtkBSl3mPyYvJ3gMVDq9g6qAGTKHKXCXGwaeVO2GnDasWBpVMGZr0t/3joW5jgL/yKmkrysI0sc8usjWosOpSr1tfsmnh3JTccDxM5g2sBbpXfgxert7g9e/acvGYKy8X/i+A/1H2LE00QZVv root@gitserver
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# cd /root/
+[root@gitserver ~]# git clone git@github.com:shan5a6/dvsbatch3.git
+Cloning into 'dvsbatch3'...
+The authenticity of host 'github.com (140.82.114.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+RSA key fingerprint is MD5:16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.114.3' (RSA) to the list of known hosts.
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 11 (delta 2), reused 5 (delta 0), pack-reused 0
+Receiving objects: 100% (11/11), done.
+Resolving deltas: 100% (2/2), done.
+[root@gitserver ~]# cd dvsbatch3/
+[root@gitserver dvsbatch3]# touch m1 m2
+[root@gitserver dvsbatch3]# git add .
+[root@gitserver dvsbatch3]# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsWH+LWu4OegIkKeb/w27T7R1aFcLjmYZR7VuEwAFm7Ql/yWvagI4xQDVbjlA5ls8c76S6mBBTl1oH8rOI+dTuEOAgKTUy3dLlTURp5xVHiiUHI9Efkz3qRSij2pM38citIbprbNz8Ue4lGOCq/Ohu6gZxgq+lUp+kliOG4/LZng/pGrgfBPsIEfnu6faQNVYb2W9wtkBSl3mPyYvJ3gMVDq9g6qAGTKHKXCXGwaeVO2GnDasWBpVMGZr0t/3joW5jgL/yKmkrysI0sc8usjWosOpSr1tfsmnh3JTccDxM5g2sBbpXfgxert7g9e/acvGYKy8X/i+A/1H2LE00QZVv root@gitserver
+[root@gitserver dvsbatch3]# cd ..
+[root@gitserver ~]#
+[root@gitserver ~]# rm rf dvsbatch3/
+rm: cannot remove ‘rf’: No such file or directory
+rm: cannot remove ‘dvsbatch3/’: Is a directory
+[root@gitserver ~]# rm rf dvsbatch3/ -rf
+[root@gitserver ~]# ls -l
+total 0
+[root@gitserver ~]#
+[root@gitserver ~]# git clone git@github.com:shan5a6/dvsbatch3.git
+Cloning into 'dvsbatch3'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 11 (delta 2), reused 5 (delta 0), pack-reused 0
+Receiving objects: 100% (11/11), done.
+Resolving deltas: 100% (2/2), done.
+[root@gitserver ~]# cd dvsbatch3/
+[root@gitserver dvsbatch3]# touch m1 m2
+[root@gitserver dvsbatch3]# git add .
+[root@gitserver dvsbatch3]# git commit -m "testing tagging"
+[master b22a371] testing tagging
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 m1
+ create mode 100644 m2
+[root@gitserver dvsbatch3]# git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 234 bytes | 234.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:shan5a6/dvsbatch3.git
+   a3b1eea..b22a371  master -> master
+[root@gitserver dvsbatch3]# #git push origin master
+[root@gitserver dvsbatch3]# git remote -v
+origin  git@github.com:shan5a6/dvsbatch3.git (fetch)
+origin  git@github.com:shan5a6/dvsbatch3.git (push)
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# git log
+commit b22a37177542a469dcaa73b597305e0017caa1a3 (HEAD -> master, origin/master, origin/HEAD)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 03:23:35 2021 +0000
+
+    testing tagging
+
+commit a3b1eea0ddd59a2ec09b45fc61ad9af0f3d3590e
+Merge: b956f57 8288c9a
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 06:54:25 2021 +0400
+
+    Merge pull request #1 from shan5a6/raj1
+
+    testing branch stratagie
+
+commit 8288c9a0e8bd587c0cd6aa53f3df926db5d3ace9 (origin/raj1)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 02:35:30 2021 +0000
+
+    testing branch stratagie
+
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]# git brnach
+git: 'brnach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+[root@gitserver dvsbatch3]# git log
+commit b22a37177542a469dcaa73b597305e0017caa1a3 (HEAD -> master, origin/master, origin/HEAD)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 03:23:35 2021 +0000
+
+    testing tagging
+
+commit a3b1eea0ddd59a2ec09b45fc61ad9af0f3d3590e
+Merge: b956f57 8288c9a
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 06:54:25 2021 +0400
+
+    Merge pull request #1 from shan5a6/raj1
+
+    testing branch stratagie
+
+commit 8288c9a0e8bd587c0cd6aa53f3df926db5d3ace9 (origin/raj1)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 02:35:30 2021 +0000
+
+    testing branch stratagie
+
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]# git branch
+* master
+[root@gitserver dvsbatch3]# git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/raj1
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# cd /tmp/dvsbatch3/
+[root@gitserver dvsbatch3]# git branch
+* jay1
+  master
+  raj1
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]#
+[root@gitserver dvsbatch3]# git log
+commit 8764e2d4e70c3ddb49a8799adf46cd3a68e16c25 (HEAD -> jay1, tag: releasev1.0)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 03:04:46 2021 +0000
+
+    testing tagging
+
+commit b956f57dfcc780a9c7cb0f4c6ce1452c47e4b6ca (origin/master, origin/HEAD, master)
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Thu Oct 7 01:44:55 2021 +0000
+
+    My git first commit
+
+commit 976f8ad49ddbe5eb8d80acfbca70f9b72452213c
+Author: shan5a6 <shahan.aix@gmail.com>
+Date:   Mon Oct 4 07:16:48 2021 +0400
+
+    Initial commit
+[root@gitserver dvsbatch3]# git checkout  8764e2d4e70c3ddb49a8799adf46cd3a68e16c25 .
+Updated 0 paths from 76fe1e4
+[root@gitserver dvsbatch3]# git checkout -b hotfix
+Switched to a new branch 'hotfix'
+[root@gitserver dvsbatch3]# git branch -a
+* hotfix
+  jay1
+  master
+  raj1
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/raj1
+[root@gitserver dvsbatch3]# git remotev -w
+git: 'remotev' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+[root@gitserver dvsbatch3]# git remote -v
+origin  https://github.com/shan5a6/dvsbatch3.git (fetch)
+origin  https://github.com/shan5a6/dvsbatch3.git (push)
+[root@gitserver dvsbatch3]#
